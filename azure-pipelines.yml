@@ -29,9 +29,9 @@ steps:
     npm install
   displayName: 'npm install command'
   
-- script: |
-    npm test
-  displayName: 'npm test command'
+# - script: |
+#     npm test
+#   displayName: 'npm test command'
   
     
 - task: ArchiveFiles@2
