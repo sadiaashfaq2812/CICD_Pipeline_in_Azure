@@ -40,5 +40,5 @@ steps:
     rootFolderOrFile: $(System.DefaultWorkingDirectory)
     includeRootFolder: false
 
-- task: PublishBuildAritfacts@1
+- task: PublishBuildArtifacts@1
   displayName: 'Publish aritfacts: drop'
