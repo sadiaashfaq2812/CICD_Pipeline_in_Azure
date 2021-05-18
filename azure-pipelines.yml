@@ -56,6 +56,11 @@ steps:
 - script: |
     npm install owasp-dependency-check
   displayName: 'Install owasp-dependency-check command'
+
+- script: |
+    npm install static-code-analysis
+  displayName: 'Install static-code-analysis command'
+
 # - script: |
 #     npm test
 #   displayName: 'npm test command'
