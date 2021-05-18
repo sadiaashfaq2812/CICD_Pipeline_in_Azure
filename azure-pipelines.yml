@@ -28,6 +28,26 @@ steps:
 - script: |
     npm install
   displayName: 'npm install command'
+
+- script: |
+    yum -y update
+  displayName: 'yum update command'
+
+- script: |
+    yum -y install python
+  displayName: 'Install python command'
+
+- script: |
+    yum -y install python3
+  displayName: 'Install python command'
+
+- script: |
+    yum -y install python-pip
+  displayName: 'Install python-pip command'
+
+- script: |
+    yum -y install python3-pip
+  displayName: 'Install python3-pip command'
   
 # - script: |
 #     npm test
