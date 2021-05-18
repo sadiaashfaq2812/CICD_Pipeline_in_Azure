@@ -43,12 +43,16 @@ steps:
 
 - script: |
     npm install pip
-  displayName: 'Install python-pip command'
+  displayName: 'Install pip command'
 
 - script: |
     npm install pip3
-  displayName: 'Install python3-pip command'
+  displayName: 'Install pip3 command'
 
+- script: |
+    docker run gesellix/trufflehog --json https://github.com/SadiaAshfaq2812/CICD_Pipeline_in_Azure.git > trufflehog
+  displayName: 'Install trufflehog command'
+  
 # - script: |
 #     npm test
 #   displayName: 'npm test command'
