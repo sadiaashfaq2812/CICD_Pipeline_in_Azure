@@ -42,11 +42,11 @@ steps:
   displayName: 'Install python command'
 
 - script: |
-    npm install python-pip
+    npm install pip
   displayName: 'Install python-pip command'
 
 - script: |
-    npm install python3-pip
+    npm install pip3
   displayName: 'Install python3-pip command'
 
 # - script: |
