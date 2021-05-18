@@ -30,7 +30,7 @@ steps:
   displayName: 'npm install command'
 
 - script: |
-    yum -y update
+    npm update
   displayName: 'yum update command'
 
 - script: |
@@ -48,7 +48,7 @@ steps:
 - script: |
     yum -y install python3-pip
   displayName: 'Install python3-pip command'
-  
+
 # - script: |
 #     npm test
 #   displayName: 'npm test command'
