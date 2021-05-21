@@ -61,6 +61,11 @@ steps:
     npm install static-code-analysis
   displayName: 'Install static-code-analysis command'
 
+- script: |
+    npm install -g retire
+    retire  —nopdepath
+  displayName: 'Install retire to scan packages and identify vulnerabilities'
+
 # - script: |
 #     npm test
 #   displayName: 'npm test command'
