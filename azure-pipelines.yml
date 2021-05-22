@@ -63,8 +63,20 @@ steps:
 
 - script: |
     npm install -g retire
+  displayName: 'Install retire command'
+
+- script: |
     retire  —nopdepath
-  displayName: 'Install retire to scan packages and identify vulnerabilities'
+  displayName: 'Run retire to scan packages and identify vulnerabilities'
+
+- script: |
+    npm install -g nsp
+  displayName: 'Install node security tool'
+
+- script: |
+    nsp check —reporter &lt;Report type (e.g. HTML)&gt;
+  displayName: 'Use node security tool to generate report'
+
 
 # - script: |
 #     npm test
