@@ -77,7 +77,7 @@ steps:
 #     nsp check
 #   displayName: 'Use node security tool to generate report'
 
--script: |
+- script: |
     npm install -g snyk
   displayName: 'Install snyk command'
 
