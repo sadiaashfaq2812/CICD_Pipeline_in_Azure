@@ -69,14 +69,17 @@ steps:
     retire  —nopdepath
   displayName: 'Run retire to scan packages and identify vulnerabilities'
 
-- script: |
-    npm install -g nsp
-  displayName: 'Install node security tool'
+# - script: |
+#     npm install -g nsp
+#   displayName: 'Install node security tool'
 
-- script: |
-    nsp check —reporter &lt;Report type (e.g. HTML)&gt;
-  displayName: 'Use node security tool to generate report'
+# - script: |
+#     nsp check
+#   displayName: 'Use node security tool to generate report'
 
+-script: |
+    npm install -g snyk
+  displayName: 'Install snyk command'
 
 # - script: |
 #     npm test
