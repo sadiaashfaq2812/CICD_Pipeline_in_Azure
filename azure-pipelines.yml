@@ -61,13 +61,13 @@ steps:
     npm install static-code-analysis
   displayName: 'Install static-code-analysis command'
 
-- script: |
-    npm install -g retire
-  displayName: 'Install retire command'
+# - script: |
+#     npm install -g retire
+#   displayName: 'Install retire command'
 
-- script: |
-    retire  —nopdepath
-  displayName: 'Run retire to scan packages and identify vulnerabilities'
+# - script: |
+#     retire  —nopdepath
+#   displayName: 'Run retire to scan packages and identify vulnerabilities'
 
 # - script: |
 #     npm install -g nsp
