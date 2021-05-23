@@ -1,5 +1,5 @@
 pool:
-  vmImage: vs2017-win2016
+  vmImage: 'ubuntu-16.04'
 
 variables:
   solution: './ClientLibrary/Samples/ClientSamples.sln'
@@ -54,7 +54,7 @@ steps:
   displayName: 'Install trufflehog command'
 
 - script: |
-    trufflehog --regex --entropy=False https://github.com/dxa4481/truffleHog.git
+    trufflehog --regex --entropy=False https://github.com/SadiaAshfaq2812/CICD_Pipeline_in_Azure.git
   displayName: 'Run trufflehog command'
 
 # - script: |
