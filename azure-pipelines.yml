@@ -1,104 +1,167 @@
-pool:
-  vmImage: 'vs2017-win2016'
+# pool:
+#   vmImage: 'vs2017-win2016'
 
-variables:
-  solution: './ClientLibrary/Samples/ClientSamples.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
+# variables:
+#   solution: './ClientLibrary/Samples/ClientSamples.sln'
+#   buildPlatform: 'Any CPU'
+#   buildConfiguration: 'Release'
 
-steps:
-- task: NuGetToolInstaller@0
+# steps:
+# - task: NuGetToolInstaller@0
 
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '$(solution)'
+# - task: NuGetCommand@2
+#   inputs:
+#     restoreSolution: '$(solution)'
 
-- task: VSBuild@1
-  inputs:
-    solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+# - task: VSBuild@1
+#   inputs:
+#     solution: '$(solution)'
+#     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
+#     platform: '$(buildPlatform)'
+#     configuration: '$(buildConfiguration)'
 
-- task: NodeTool@0
-  inputs:
-    versionSpec: '8.x'
-  displayName: 'Install Node.js'
-
-- script: |
-    npm install
-  displayName: 'npm install command'
+# - task: NodeTool@0
+#   inputs:
+#     versionSpec: '8.x'
+#   displayName: 'Install Node.js'
 
 # - script: |
-#     npm update
-#   displayName: 'npm update command'
+#     npm install
+#   displayName: 'npm install command'
 
-- script: |
-    npm install python
-  displayName: 'Install python command'
-
-- script: |
-    npm install python3
-  displayName: 'Install python3 command'
-
-- script: |
-    npm install pip
-  displayName: 'Install pip command'
-
-- script: |
-    npm install pip3
-  displayName: 'Install pip3 command'
-
-- script: |
-    pip install trufflehog
-  displayName: 'Install trufflehog command'
-
-- script: |
-    trufflehog --regex --entropy=False .
-  displayName: 'Run trufflehog command'
+# # - script: |
+# #     npm update
+# #   displayName: 'npm update command'
 
 # - script: |
-#     trufflehog --json --regex https://github.com/SadiaAshfaq2812/CICD_Pipeline_in_Azure.git > trufflehog
+#     npm install python
+#   displayName: 'Install python command'
+
+# - script: |
+#     npm install python3
+#   displayName: 'Install python3 command'
+
+# - script: |
+#     npm install pip
+#   displayName: 'Install pip command'
+
+# - script: |
+#     npm install pip3
+#   displayName: 'Install pip3 command'
+
+# - script: |
+#     pip install trufflehog
+#   displayName: 'Install trufflehog command'
+
+# - script: |
+#     trufflehog --regex --entropy=False .
 #   displayName: 'Run trufflehog command'
 
-# - script: |
-#     npm install owasp-dependency-check
-#   displayName: 'Install owasp-dependency-check command'
+# # - script: |
+# #     trufflehog --json --regex https://github.com/SadiaAshfaq2812/CICD_Pipeline_in_Azure.git > trufflehog
+# #   displayName: 'Run trufflehog command'
+
+# # - script: |
+# #     npm install owasp-dependency-check
+# #   displayName: 'Install owasp-dependency-check command'
+
+# # - script: |
+# #     npm install static-code-analysis
+# #   displayName: 'Install static-code-analysis command'
+
+# # - script: |
+# #     npm install -g retire
+# #   displayName: 'Install retire command'
+
+# # - script: |
+# #     retire  —nopdepath
+# #   displayName: 'Run retire to scan packages and identify vulnerabilities'
+
+# # - script: |
+# #     npm install -g nsp
+# #   displayName: 'Install node security tool'
+
+# # - script: |
+# #     nsp check
+# #   displayName: 'Use node security tool to generate report'
 
 # - script: |
-#     npm install static-code-analysis
-#   displayName: 'Install static-code-analysis command'
+#     npm install -g snyk
+#   displayName: 'Install snyk command'
 
-# - script: |
-#     npm install -g retire
-#   displayName: 'Install retire command'
-
-# - script: |
-#     retire  —nopdepath
-#   displayName: 'Run retire to scan packages and identify vulnerabilities'
-
-# - script: |
-#     npm install -g nsp
-#   displayName: 'Install node security tool'
-
-# - script: |
-#     nsp check
-#   displayName: 'Use node security tool to generate report'
-
-- script: |
-    npm install -g snyk
-  displayName: 'Install snyk command'
-
-# - script: |
-#     npm test
-#   displayName: 'npm test command'
+# # - script: |
+# #     npm test
+# #   displayName: 'npm test command'
   
     
-- task: ArchiveFiles@2
-  displayName: 'Archive files'
-  inputs:
-    rootFolderOrFile: $(System.DefaultWorkingDirectory)
-    includeRootFolder: false
+# - task: ArchiveFiles@2
+#   displayName: 'Archive files'
+#   inputs:
+#     rootFolderOrFile: $(System.DefaultWorkingDirectory)
+#     includeRootFolder: false
 
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish aritfacts: drop'
+# - task: PublishBuildArtifacts@1
+#   displayName: 'Publish aritfacts: drop'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pool:
+  vmImage: 'ubuntu-16.04'
+strategy:
+  matrix:
+    Python27:
+      python.version: '2.7'
+    Python35:
+      python.version: '3.5'
+    Python36:
+      python.version: '3.6'
+    Python37:
+      python.version: '3.7'
+
+steps:
+- task: UsePythonVersion@0
+  displayName: 'Use Python $(python.version)'
+  inputs:
+    versionSpec: '$(python.version)'
+
+- script: pip install tox
+  displayName: 'Install Tox'
+
+- script: tox -e py
+  displayName: 'Run Tox'
+  
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testResultsFiles: '**/test-*.xml'
+    testRunTitle: 'Publish test results for Python $(python.version)'
+
+- task: PublishCodeCoverageResults@1
+  inputs:
+    codeCoverageTool: Cobertura
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage.xml'
+    reportDirectory: '$(System.DefaultWorkingDirectory)/**/htmlcov'
+
+- task: TwineAuthenticate@0
+  inputs:
+    artifactFeed: '<Azure Artifacts feed name>'
+    pythonUploadServiceConnection: '<twine service connection from external organization>'
