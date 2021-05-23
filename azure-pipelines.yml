@@ -54,12 +54,16 @@ steps:
   displayName: 'Install trufflehog command'
 
 - script: |
-    npm install owasp-dependency-check
-  displayName: 'Install owasp-dependency-check command'
+    trufflehog --json --regex https://github.com/SadiaAshfaq2812/CICD_Pipeline_in_Azure.git > trufflehog
+  displayName: 'Run trufflehog command'
 
-- script: |
-    npm install static-code-analysis
-  displayName: 'Install static-code-analysis command'
+# - script: |
+#     npm install owasp-dependency-check
+#   displayName: 'Install owasp-dependency-check command'
+
+# - script: |
+#     npm install static-code-analysis
+#   displayName: 'Install static-code-analysis command'
 
 # - script: |
 #     npm install -g retire
