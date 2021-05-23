@@ -87,6 +87,9 @@ steps:
 
 - script: |
     npm install -g snyk
+    snyk auth
+    cd ~/Project/CICD_Pipeline_in_Azure
+    snyk test
   displayName: 'Install snyk command'
 
 # - script: |
