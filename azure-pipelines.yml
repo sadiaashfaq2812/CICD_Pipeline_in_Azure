@@ -54,7 +54,8 @@ steps:
   displayName: 'Install trufflehog command'
 
 - script: |
-    trufflehog --regex --entropy=False https://github.com/SadiaAshfaq2812/CICD_Pipeline_in_Azure.git
+    git clone https://github.com/SadiaAshfaq2812/CICD_Pipeline_in_Azure.git
+    trufflehog --regex --entropy=False CICD_Pipeline_in_Azure/
   displayName: 'Run trufflehog command'
 
 # - script: |
