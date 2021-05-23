@@ -53,7 +53,7 @@ steps:
     npm install -g trufflehog
   displayName: 'Install trufflehog command'
 
--script: |
+- script: |
     trufflehog
   displayName: 'Run trufflehog command'
 
