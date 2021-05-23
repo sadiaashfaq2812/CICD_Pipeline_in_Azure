@@ -50,7 +50,7 @@ steps:
   displayName: 'Install pip3 command'
 
 - script: |
-    pip install trufflehog
+    npm install trufflehog
   displayName: 'Install trufflehog command'
 
 - script: |
