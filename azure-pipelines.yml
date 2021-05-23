@@ -49,13 +49,13 @@ steps:
     npm install pip3
   displayName: 'Install pip3 command'
 
-- script: |
-    pip install trufflehog
-  displayName: 'Install trufflehog command'
+# - script: |
+#     pip install trufflehog
+#   displayName: 'Install trufflehog command'
 
-- script: |
-    trufflehog --regex --entropy=False https://github.com/SadiaAshfaq2812/CICD_Pipeline_in_Azure.git
-  displayName: 'Run trufflehog command'
+# - script: |
+#     trufflehog --regex --entropy=False https://github.com/SadiaAshfaq2812/CICD_Pipeline_in_Azure.git
+#   displayName: 'Run trufflehog command'
 
 # - script: |
 #     trufflehog --json --regex https://github.com/SadiaAshfaq2812/CICD_Pipeline_in_Azure.git > trufflehog
