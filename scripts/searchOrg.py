@@ -1,5 +1,5 @@
 """
-Credit for this code goes to tahir javed
+Credit for this code goes to sadia ashfaq
 via https://github.com/dxa4481/truffleHog/pull/9
 """
 import requests
@@ -18,7 +18,7 @@ rules = {
     "Twitter Oauth": "[t|T][w|W][i|I][t|T][t|T][e|E][r|R].{0,30}['\"\\s][0-9a-zA-Z]{35,44}['\"\\s]",
     "GitHub": "[g|G][i|I][t|T][h|H][u|U][b|B].{0,30}['\"\\s][0-9a-zA-Z]{35,40}['\"\\s]",
     "Google Oauth": "(\"client_secret\":\"[a-zA-Z0-9-_]{24}\")",
-    "AWS API Key": "AKIA[0-9A-Z]{16}",
+    # "AWS API Key": "AKIA[0-9A-Z]{16}",
     "Heroku API Key": "[h|H][e|E][r|R][o|O][k|K][u|U].{0,30}[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}",
     "Generic Secret": "[s|S][e|E][c|C][r|R][e|E][t|T].{0,30}['\"\\s][0-9a-zA-Z]{32,45}['\"\\s]",
     "Generic API Key": "[a|A][p|P][i|I][_]?[k|K][e|E][y|Y].{0,30}['\"\\s][0-9a-zA-Z]{32,45}['\"\\s]",
