@@ -29,9 +29,9 @@ steps:
     npm install
   displayName: 'npm install command'
 
-- script: |
-    npm update
-  displayName: 'npm update command'
+# - script: |
+#     npm update
+#   displayName: 'npm update command'
 
 - script: |
     npm install python
@@ -39,7 +39,7 @@ steps:
 
 - script: |
     npm install python3
-  displayName: 'Install python command'
+  displayName: 'Install python3 command'
 
 - script: |
     npm install pip
@@ -50,12 +50,16 @@ steps:
   displayName: 'Install pip3 command'
 
 - script: |
-    npm install trufflehog
+    npm install -g trufflehog
   displayName: 'Install trufflehog command'
 
-- script: |
-    trufflehog --json --regex https://github.com/SadiaAshfaq2812/CICD_Pipeline_in_Azure.git > trufflehog
+-script: |
+    trufflehog
   displayName: 'Run trufflehog command'
+
+# - script: |
+#     trufflehog --json --regex https://github.com/SadiaAshfaq2812/CICD_Pipeline_in_Azure.git > trufflehog
+#   displayName: 'Run trufflehog command'
 
 # - script: |
 #     npm install owasp-dependency-check
