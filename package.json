@@ -7,10 +7,10 @@
     "test": "test"
   },
   "dependencies": {
-    "snyk": "1.605.0"
+    "snyk": "1.996.0"
   },
   "devDependencies": {
-    "snyk": "1.605.0"
+    "snyk": "1.996.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
